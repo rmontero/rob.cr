@@ -2,6 +2,5 @@
   "libraries": ["./src/slices"],
   "adapter": "@slicemachine/adapter-next",
   "repositoryName": "robcr",
-  
   "localSliceSimulatorURL": "http://rob.cr:3000/slice-simulator"
 }
