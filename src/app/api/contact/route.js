@@ -23,6 +23,7 @@ export async function POST(request) {
 
   // Save the form data to Supabase
   try {
+
     const { data, error } = await supabase
       .from("contacts")
       .insert([{
@@ -36,14 +37,11 @@ export async function POST(request) {
       return new Response("Failed to save data", { status: 500 });
     }
 
-    return new Response("Data saved successfully", { status: 200 });
   } catch (error) {
     console.error("Error processing request:", error);
     return new Response("Internal Server Error", { status: 500 });
   }
 
-  // This is just an example, so we won't do anything except redirect back to
-  // the homepage.
   return new Response("Homepage redirect", {
     status: 302,
     headers: { Location: "/" },
