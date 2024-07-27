@@ -55,6 +55,8 @@ export default function RootLayout({ children }) {
           )}
           {children}
           <PrismicPreview repositoryName={repositoryName} />
+          <SpeedInsights />
+          <Analytics />
         </main>
       </body>
     </html>
