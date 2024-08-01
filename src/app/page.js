@@ -11,11 +11,16 @@ export async function generateMetadata() {
 
   return {
     title: prismic.asText(settings.data.name),
+    description: prismic.asText(settings.data.description),
     openGraph: {
-      title: prismic.asText(settings.data.meta_tile),
-      description: prismic.asText(settings.data.meta_description),
-      images: prismic.asImageSrc(settings.data.meta_image)
-    }
+      title: prismic.asText(settings.data.name),
+      description: prismic.asText(settings.data.description),
+      images: [
+        {
+          url: prismic.asImageSrc(settings.data.profilePicture)
+        },
+      ],
+    },
   };
 }
 
