@@ -9,6 +9,9 @@ const nextConfig = {
       },
     ];
   },
+  experimental: {
+    metadataBase: new URL('https://rob.cr'),
+  },
 };
 
 module.exports = nextConfig;
