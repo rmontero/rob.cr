@@ -1,0 +1,20 @@
+# Allow OpenAI’s GPTBot
+User-agent: GPTBot
+Allow: /
+
+# Allow OpenAI’s OAI-SearchBot (used for ChatGPT Search)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Allow Anthropic’s ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# Allow Google’s AI/Gemini crawler
+User-agent: Google-Extended
+Allow: /
+
+# Default rules for all other crawlers
+User-agent: *
+Disallow:
+

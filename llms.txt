@@ -1,0 +1,18 @@
+# LLMs.txt – Guidance for AI Crawlers
+# More info: https://llmstxt.org/
+
+# Allow all AI models and crawlers to index public resume content
+User-agent: *
+Allow: /
+
+# Primary content domain
+Sitemap: https://rob.cr/resume
+Sitemap: https://rob.cr/sitemap.xml
+
+# Contact for questions
+Contact: mailto:r@rob.cr
+
+# Licensing note
+Policy: Public content on this site may be used for AI indexing and summarization,
+        provided attribution includes the canonical URL (https://rob.cr).
+
