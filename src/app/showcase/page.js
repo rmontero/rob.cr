@@ -12,9 +12,22 @@ const mockNavigation = {
 
 const mockSettings = {
   data: {
-    name: "Rob.cr",
-    description: "Full Stack Developer & Designer",
+    name: [
+      {
+        type: "heading1",
+        text: "Rob.cr",
+        spans: []
+      }
+    ],
+    description: [
+      {
+        type: "paragraph",
+        text: "Full Stack Developer & Designer",
+        spans: []
+      }
+    ],
     profilePicture: {
+      dimensions: { width: 400, height: 400 },
       url: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
       alt: "Profile picture"
     }
@@ -77,11 +90,6 @@ console.log(greeting);
         {
           type: "heading2",
           text: "Project Gallery",
-          spans: []
-        },
-        {
-          type: "paragraph", 
-          text: "Showcase your work with a responsive image gallery",
           spans: []
         }
       ]
@@ -146,11 +154,6 @@ console.log(greeting);
         {
           type: "heading2", 
           text: "Skills & Expertise",
-          spans: []
-        },
-        {
-          type: "paragraph",
-          text: "Technical skills and areas of specialization",
           spans: []
         }
       ]
@@ -278,11 +281,6 @@ console.log(greeting);
           type: "heading2",
           text: "Professional Experience",
           spans: []
-        },
-        {
-          type: "paragraph", 
-          text: "Career journey and key achievements in software development",
-          spans: []
         }
       ]
     },
@@ -369,11 +367,6 @@ console.log(greeting);
         {
           type: "heading2",
           text: "What Clients Say", 
-          spans: []
-        },
-        {
-          type: "paragraph",
-          text: "Feedback from satisfied clients and collaborators",
           spans: []
         }
       ]
@@ -497,11 +490,6 @@ console.log(greeting);
         {
           type: "heading2",
           text: "Frequently Asked Questions",
-          spans: []
-        },
-        {
-          type: "paragraph",
-          text: "Common questions about my work process and services",
           spans: []
         }
       ]
@@ -633,6 +621,8 @@ console.log(greeting);
     items: []
   }
 ];
+
+export const dynamic = 'force-dynamic';
 
 export default function ComponentShowcasePage() {
   return (

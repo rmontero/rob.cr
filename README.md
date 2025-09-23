@@ -5,6 +5,28 @@ This sample blog is an excellent starting point to explore [Next.js][nextjs] and
 - **Demo**: [Open live demo][live-demo]
 - **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
 
+## 📋 Requirements
+
+- **Node.js**: v24.8.0 (specified in `.nvmrc`)
+- **npm**: Latest version compatible with Node v24.8.0
+
+### Node Version Management
+
+This project includes a `.nvmrc` file to ensure consistent Node.js version usage across all environments.
+
+**Using nvm (recommended):**
+```sh
+nvm use
+```
+
+**Using fnm:**
+```sh
+fnm use
+```
+
+**Manual installation:**
+Download and install Node.js v24.8.0 from [nodejs.org](https://nodejs.org/)
+
 &nbsp;
 
 <img src="https://user-images.githubusercontent.com/8601064/163122284-5b80a81e-a4fd-482e-9bd5-99b22f61175f.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
