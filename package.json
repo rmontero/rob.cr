@@ -9,34 +9,36 @@
     "next:dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx",
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",
     "gen": "prismic-ts-codegen"
   },
   "dependencies": {
     "@prismicio/client": "^7.7.4",
-    "@prismicio/next": "^1.6.0",
+    "@prismicio/next": "^2.0.1",
     "@prismicio/react": "^2.8.0",
     "@supabase/supabase-js": "^2.44.4",
     "@tailwindcss/typography": "^0.5.18",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
     "clsx": "^2.1.1",
-    "next": "^14.2.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.84",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@types/react": "18.2.33",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
-    "eslint": "8.52.0",
-    "eslint-config-next": "^14.0.1",
+    "eslint": "^9.36.0",
+    "eslint-config-next": "^15.5.4",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
@@ -44,7 +46,7 @@
     "tailwindcss": "^3.3.5"
   },
   "engines": {
-    "node": "24.8.0",
+    "node": ">=18.17.0",
     "npm": ">=10.0.0"
   }
 }
