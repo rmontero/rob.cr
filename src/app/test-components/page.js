@@ -7,9 +7,25 @@ import { Bounded } from "@/components/Bounded";
 const mockNavigation = { data: { links: [] } };
 const mockSettings = {
   data: {
-    name: "Rob.cr Component Test",
-    description: "Testing New Prismic Components",
-    profilePicture: { url: "/favicon.ico", alt: "Test" }
+    name: [
+      {
+        type: "heading1",
+        text: "Rob.cr Component Test",
+        spans: []
+      }
+    ],
+    description: [
+      {
+        type: "paragraph",
+        text: "Testing New Prismic Components",
+        spans: []
+      }
+    ],
+    profilePicture: {
+      dimensions: { width: 32, height: 32 },
+      url: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face",
+      alt: "Test"
+    }
   }
 };
 
@@ -44,8 +60,7 @@ Perfect for blog posts, documentation, and rich content!`
     slice_type: "gallery",
     primary: {
       title: [
-        { type: "heading2", text: "Gallery Component", spans: [] },
-        { type: "paragraph", text: "Responsive image grid perfect for portfolios", spans: [] }
+        { type: "heading2", text: "Gallery Component", spans: [] }
       ]
     },
     items: [
@@ -80,8 +95,7 @@ Perfect for blog posts, documentation, and rich content!`
     slice_type: "feature_list",
     primary: {
       title: [
-        { type: "heading2", text: "FeatureList Component", spans: [] },
-        { type: "paragraph", text: "Perfect for showcasing skills and services", spans: [] }
+        { type: "heading2", text: "FeatureList Component", spans: [] }
       ]
     },
     items: [
@@ -125,8 +139,7 @@ Perfect for blog posts, documentation, and rich content!`
     slice_type: "timeline",
     primary: {
       title: [
-        { type: "heading2", text: "Timeline Component", spans: [] },
-        { type: "paragraph", text: "Great for career history and project milestones", spans: [] }
+        { type: "heading2", text: "Timeline Component", spans: [] }
       ]
     },
     items: [
@@ -157,8 +170,7 @@ Perfect for blog posts, documentation, and rich content!`
     slice_type: "testimonials",
     primary: {
       title: [
-        { type: "heading2", text: "Testimonials Component", spans: [] },
-        { type: "paragraph", text: "Client feedback and recommendations", spans: [] }
+        { type: "heading2", text: "Testimonials Component", spans: [] }
       ]
     },
     items: [
@@ -215,6 +227,8 @@ Ready to build something amazing! 🚀`
     }
   }
 ];
+
+export const dynamic = 'force-dynamic';
 
 export default function NewComponentsTestPage() {
   return (
