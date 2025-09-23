@@ -1,0 +1,69 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "faq",
+    "items": [
+      {
+        "question": "What technologies do you specialize in?",
+        "answer": [
+          {
+            "type": "paragraph",
+            "text": "I specialize in modern web development technologies including React, Next.js, Node.js, TypeScript, and cloud platforms like AWS and Vercel. I also have experience with databases like PostgreSQL and MongoDB.",
+            "spans": [
+              {
+                "start": 73,
+                "end": 78,
+                "type": "strong"
+              },
+              {
+                "start": 80,
+                "end": 87,
+                "type": "strong"
+              },
+              {
+                "start": 89,
+                "end": 96,
+                "type": "strong"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "How long does a typical project take?",
+        "answer": [
+          {
+            "type": "paragraph",
+            "text": "Project timelines vary based on complexity and scope. A simple website might take 2-4 weeks, while a full web application can take 8-12 weeks or more. I always provide detailed project timelines during the planning phase.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "question": "Do you work with teams or solo?",
+        "answer": [
+          {
+            "type": "paragraph",
+            "text": "I'm comfortable working both independently and as part of a team. I have experience collaborating with designers, other developers, and stakeholders using tools like Slack, GitHub, and project management platforms.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Frequently Asked Questions",
+          "spans": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Common questions about my work and process",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

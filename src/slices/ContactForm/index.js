@@ -50,17 +50,24 @@ const ContactForm = () => {
         method="post"
         className="grid grid-cols-1 gap-6"
       >
-        <InputField label="Name" name="name" placeholder="Jane Doe" />
+        <InputField
+          label="Name"
+          name="name"
+          placeholder="Jane Doe" 
+          required
+        />
         <InputField
           label="Email Address"
           name="email"
           type="email"
           placeholder="jane.doe@example.com"
+          required
         />
         <TextareaField
           label="Message"
           name="message"
           placeholder="Write your message here…"
+          required
         />
         <button
           type="submit"

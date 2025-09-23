@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
     .catch(() => notFound());
 
   return {
+    metadataBase: new URL('https://rob.cr'),
     title: `${prismic.asText(page.data.title)} | ${prismic.asText(
       settings.data.name,
     )}`,

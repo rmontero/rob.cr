@@ -10,7 +10,18 @@ export async function generateMetadata() {
   const settings = await client.getSingle("settings");
 
   return {
+    metadataBase: new URL('https://rob.cr'),
     title: prismic.asText(settings.data.name),
+    description: prismic.asText(settings.data.description),
+    openGraph: {
+      title: prismic.asText(settings.data.name),
+      description: prismic.asText(settings.data.description),
+      images: [
+        {
+          url: prismic.asImageSrc(settings.data.profilePicture)
+        },
+      ],
+    },
   };
 }
 

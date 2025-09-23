@@ -1,0 +1,44 @@
+{
+  "id": "faq",
+  "type": "SharedSlice",
+  "name": "FAQ",
+  "description": "Frequently Asked Questions with collapsible answers",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "FAQ",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "FAQ section title...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,strong,em"
+          }
+        }
+      },
+      "items": {
+        "question": {
+          "type": "Text",
+          "config": {
+            "label": "Question",
+            "placeholder": "Enter the question..."
+          }
+        },
+        "answer": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Answer",
+            "placeholder": "Enter the answer...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item"
+          }
+        }
+      }
+    }
+  ]
+}
