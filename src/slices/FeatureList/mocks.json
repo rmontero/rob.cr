@@ -1,0 +1,104 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "feature_list",
+    "items": [
+      {
+        "icon": {
+          "dimensions": { "width": 64, "height": 64 },
+          "alt": "React icon",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=64&h=64&fit=crop"
+        },
+        "title": "Frontend Development",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Building responsive and interactive user interfaces with React, Next.js, and modern CSS frameworks like Tailwind CSS.",
+            "spans": [
+              {
+                "start": 67,
+                "end": 72,
+                "type": "strong"
+              },
+              {
+                "start": 74,
+                "end": 81,
+                "type": "strong"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": { "width": 64, "height": 64 },
+          "alt": "Backend icon",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=64&h=64&fit=crop"
+        },
+        "title": "Backend Development",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Creating robust APIs and server-side applications using Node.js, Express, and modern databases like PostgreSQL and MongoDB.",
+            "spans": [
+              {
+                "start": 63,
+                "end": 70,
+                "type": "strong"
+              },
+              {
+                "start": 72,
+                "end": 79,
+                "type": "strong"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "icon": {
+          "dimensions": { "width": 64, "height": 64 },
+          "alt": "Cloud icon",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=64&h=64&fit=crop"
+        },
+        "title": "Cloud & DevOps",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Deploying and scaling applications on cloud platforms like AWS, Vercel, and implementing CI/CD pipelines for automated deployment.",
+            "spans": [
+              {
+                "start": 61,
+                "end": 64,
+                "type": "strong"
+              },
+              {
+                "start": 66,
+                "end": 72,
+                "type": "strong"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Skills & Expertise",
+          "spans": []
+        },
+        {
+          "type": "paragraph",
+          "text": "Technologies and services I specialize in",
+          "spans": []
+        }
+      ]
+    }
+  }
+]

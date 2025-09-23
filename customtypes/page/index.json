@@ -8,7 +8,10 @@
     "Main": {
       "uid": {
         "type": "UID",
-        "config": { "label": "UID", "placeholder": "URL slug for the page" }
+        "config": {
+          "label": "UID",
+          "placeholder": "URL slug for the page"
+        }
       },
       "title": {
         "type": "StructuredText",
@@ -24,10 +27,48 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "image": { "type": "SharedSlice" },
-            "quote": { "type": "SharedSlice" },
-            "text": { "type": "SharedSlice" },
-            "contact_form": { "type": "SharedSlice" }
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "alternate_grid": {
+              "type": "SharedSlice"
+            },
+            "customer_logos": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "timeline": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "markdown_text": {
+              "type": "SharedSlice"
+            },
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "feature_list": {
+              "type": "SharedSlice"
+            },
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
+            },
+            "quote": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            },
+            "contact_form": {
+              "type": "SharedSlice"
+            }
           }
         }
       }
@@ -51,7 +92,10 @@
         "type": "Image",
         "config": {
           "label": "Meta Image",
-          "constraint": { "width": 2400, "height": 1260 },
+          "constraint": {
+            "width": 2400,
+            "height": 1260
+          },
           "thumbnails": []
         }
       }

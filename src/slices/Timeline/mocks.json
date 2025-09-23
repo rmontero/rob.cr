@@ -1,0 +1,122 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "timeline",
+    "items": [
+      {
+        "title": "Senior Full Stack Developer",
+        "company": "Tech Innovation Co.",
+        "date": "Jan 2022 - Present",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Lead development of scalable web applications using React, Next.js, and Node.js. Managed a team of 3 developers and implemented CI/CD pipelines.",
+            "spans": [
+              {
+                "start": 68,
+                "end": 73,
+                "type": "strong"
+              },
+              {
+                "start": 75,
+                "end": 82,
+                "type": "strong"
+              },
+              {
+                "start": 88,
+                "end": 95,
+                "type": "strong"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "text": "Increased application performance by 40%",
+            "spans": []
+          },
+          {
+            "type": "list-item",
+            "text": "Reduced deployment time from hours to minutes",
+            "spans": []
+          },
+          {
+            "type": "list-item",
+            "text": "Mentored junior developers and conducted code reviews",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Digital Solutions Ltd.",
+        "date": "Mar 2020 - Dec 2021",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Developed responsive web applications and collaborated with UX/UI designers to create intuitive user experiences. Specialized in React and modern CSS frameworks.",
+            "spans": [
+              {
+                "start": 109,
+                "end": 114,
+                "type": "strong"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "text": "Built 15+ production web applications",
+            "spans": []
+          },
+          {
+            "type": "list-item",
+            "text": "Improved mobile user experience by 60%",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "title": "Junior Web Developer",
+        "company": "StartupXYZ",
+        "date": "Jun 2018 - Feb 2020",
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Started my career building websites and learning modern development practices. Gained experience in JavaScript, HTML, CSS, and basic backend development.",
+            "spans": [
+              {
+                "start": 102,
+                "end": 112,
+                "type": "strong"
+              },
+              {
+                "start": 114,
+                "end": 118,
+                "type": "strong"
+              },
+              {
+                "start": 120,
+                "end": 123,
+                "type": "strong"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Professional Experience",
+          "spans": []
+        },
+        {
+          "type": "paragraph",
+          "text": "My journey in web development and software engineering",
+          "spans": []
+        }
+      ]
+    }
+  }
+]
