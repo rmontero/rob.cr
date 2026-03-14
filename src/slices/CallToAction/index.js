@@ -56,24 +56,23 @@ const CallToAction = ({ slice }) => {
 
             @media screen and (min-width: 640px) {
               .es-bounded__content {
-                max-width: 90%;
+                max-width: 48rem; /* max-w-3xl */
               }
             }
 
             @media screen and (min-width: 896px) {
               .es-bounded__content {
-                max-width: 80%;
+                max-width: 48rem;
               }
             }
 
             @media screen and (min-width: 1280px) {
               .es-bounded__content {
-                max-width: 75%;
+                max-width: 48rem;
               }
             }
 
             .es-call-to-action {
-              font-family: system-ui, sans-serif;
               background-color: #fff;
               color: #333;
             }
@@ -115,13 +114,13 @@ const CallToAction = ({ slice }) => {
               line-height: 1.3;
               padding: 1rem 2.625rem;
               text-align: ${alignment};
-              transition: background-color 100ms linear;
-              background-color: #16745f;
+              transition: opacity 100ms linear;
+              background-image: linear-gradient(to right, #14b8a6, #a855f7);
               color: #fff;
             }
 
             .es-call-to-action__button:hover {
-              background-color: #0d5e4c;
+              opacity: 0.9;
             }
           `,
         }}

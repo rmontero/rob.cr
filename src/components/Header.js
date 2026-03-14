@@ -7,7 +7,47 @@ import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
 import { HorizontalDivider } from "./HorizontalDivider";
 
-const Profile = ({ name, description, profilePicture }) => {
+const Profile = ({ name, description, profilePicture, size = "large" }) => {
+  const isSmall = size === "small";
+
+  if (isSmall) {
+    return (
+      <div className="px-4">
+        <div className="flex items-center justify-center gap-4">
+          <PrismicNextLink href="/" tabIndex="-1">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full bg-slate-300">
+              {prismic.isFilled.image(profilePicture) && (
+                <PrismicNextImage
+                  field={profilePicture}
+                  fill={true}
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              )}
+            </div>
+          </PrismicNextLink>
+          {(prismic.isFilled.richText(name) ||
+            prismic.isFilled.richText(description)) && (
+            <div className="flex flex-col text-left">
+              {prismic.isFilled.richText(name) && (
+                <Heading size="xs" className="mb-0 font-sans">
+                  <PrismicNextLink href="/">
+                    <PrismicText field={name} />
+                  </PrismicNextLink>
+                </Heading>
+              )}
+              {prismic.isFilled.richText(description) && (
+                <p className="font-serif text-sm italic leading-normal tracking-tight text-slate-500">
+                  <PrismicText field={description} />
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="px-4">
       <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
@@ -27,7 +67,7 @@ const Profile = ({ name, description, profilePicture }) => {
           prismic.isFilled.richText(description)) && (
           <div className="grid grid-cols-1 gap-2 text-center">
             {prismic.isFilled.richText(name) && (
-              <Heading>
+              <Heading className="font-sans">
                 <PrismicNextLink href="/">
                   <PrismicText field={name} />
                 </PrismicNextLink>
@@ -54,12 +94,21 @@ const NavItem = ({ children }) => {
 export const Header = ({
   withDivider = true,
   withProfile = true,
+  profileSize = "large",
   navigation,
   settings,
 }) => {
   return (
     <Bounded as="header">
-      <div className="grid grid-cols-1 justify-items-center gap-20">
+      <div className="grid grid-cols-1 justify-items-center gap-10 md:gap-20">
+        {profileSize === "small" && withProfile && (
+          <Profile
+            size="small"
+            name={settings.data.name}
+            description={settings.data.description}
+            profilePicture={settings.data.profilePicture}
+          />
+        )}
         <nav>
           <ul className="flex flex-wrap justify-center gap-10">
             <NavItem>
@@ -76,8 +125,9 @@ export const Header = ({
             ))}
           </ul>
         </nav>
-        {withProfile && (
+        {profileSize !== "small" && withProfile && (
           <Profile
+            size="large"
             name={settings.data.name}
             description={settings.data.description}
             profilePicture={settings.data.profilePicture}

@@ -53,7 +53,7 @@ const Hero = ({ slice }) => {
               </div>
             )}
             <PrismicNextLink
-              className="es-call-to-action__link"
+              className="es-call-to-action__link font-sans"
               field={slice.primary.callToActionLink}
             />
           </div>
@@ -69,7 +69,6 @@ const Hero = ({ slice }) => {
             }
 
             .es-fullpage-hero {
-              font-family: system-ui, sans-serif;
               background-color: #fff;
               color: #333;
             }
@@ -100,6 +99,8 @@ const Hero = ({ slice }) => {
               display: flex;
               flex-direction: column;
               gap: 2rem;
+              margin: 0 auto;
+              max-width: 100%;
             }
 
             .es-fullpage-hero__content-right {
@@ -116,6 +117,12 @@ const Hero = ({ slice }) => {
 
               .es-fullpage-hero__content > div {
                   width: 50%;
+              }
+            }
+
+            @media (min-width: 1200px) {
+              .es-fullpage-hero__content {
+                  max-width: 1200px;
               }
             }
 
@@ -159,7 +166,7 @@ const Hero = ({ slice }) => {
             }
 
             .es-fullpage-hero__content__intro__description {
-              font-size: 1.15rem;
+              font-size: 1.2rem;
               max-width: 38rem;
             }
 
@@ -175,17 +182,19 @@ const Hero = ({ slice }) => {
 
             .es-call-to-action__link {
               justify-self: flex-start;
-              border-radius: 0.25rem;
+              border-radius: 9999px;
               font-size: 0.875rem;
+              font-weight: 700;
               line-height: 1.3;
               padding: 1rem 2.625rem;
-              transition: background-color 100ms linear;
-              background-color: #16745f;
+              text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+              transition: opacity 100ms linear;
+              background-image: linear-gradient(to right, #14b8a6, #a855f7);
               color: #fff;
             }
 
             .es-call-to-action__link:hover {
-              background-color: #0d5e4c;
+              opacity: 0.9;
             }
           `,
         }}

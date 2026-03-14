@@ -63,7 +63,6 @@ const CustomerLogos = ({ slice }) => {
             }
 
             .es-customer-logos {
-              font-family: system-ui, sans-serif;
               background-color: #f4f0ec;
               color: #333;
             }
