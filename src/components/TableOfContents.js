@@ -12,15 +12,29 @@ export function TableOfContents() {
     // PrismicRichText maps heading1 -> h2, heading2 -> h3, heading3 -> h4
     const elements = Array.from(document.querySelectorAll("article h2, article h3, article h4"));
     
+    const idCounts = {};
     const parsedHeadings = elements.map((el, index) => {
-      // Ensure the element has an ID to link to
-      if (!el.id) {
-        el.id = el.innerText.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+      // Ensure the element has a unique ID to link to
+      let baseId = el.id;
+      if (!baseId) {
+        baseId = el.innerText.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
         // fallback if empty
-        if (!el.id) el.id = `heading-${index}`;
+        if (!baseId) baseId = `heading-${index}`;
       }
+
+      let uniqueId = baseId;
+      if (idCounts[baseId]) {
+        uniqueId = `${baseId}-${idCounts[baseId]}`;
+        idCounts[baseId]++;
+      } else {
+        idCounts[baseId] = 1;
+      }
+
+      // Re-assign the element's ID to be unique
+      el.id = uniqueId;
+
       return {
-        id: el.id,
+        id: uniqueId,
         text: el.innerText,
         level: Number(el.tagName.substring(1)),
       };

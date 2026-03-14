@@ -14,191 +14,50 @@ const Hero = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="es-bounded es-fullpage-hero"
+      className="relative w-full py-12 md:py-20"
     >
-      <div
-        className={`
-                    es-fullpage-hero__content
-                    ${
-                      slice.variation === "imageRight"
-                        ? "es-fullpage-hero__image--right"
-                        : "es-fullpage-hero__image--left"
-                    }
-        `}
-      >
-        <div>
-          {isFilled.image(slice.primary.image) && (
-            <PrismicNextImage
-              field={slice.primary.image}
-              className="es-fullpage-hero__image"
-            />
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-10 md:gap-14">
+        
+        {/* Header Section */}
+        <div className="flex flex-col gap-4 text-left max-w-4xl">
+          {isFilled.keyText(slice.primary.eyebrowHeadline) && (
+            <p className="text-teal-500 dark:text-teal-400 text-lg md:text-xl font-semibold tracking-wider uppercase">
+              {slice.primary.eyebrowHeadline}
+            </p>
+          )}
+          {isFilled.richText(slice.primary.title) && (
+            <div className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-zinc-50 leading-tight [&>p]:m-0">
+              <PrismicRichText field={slice.primary.title} />
+            </div>
           )}
         </div>
 
-        <div className="es-fullpage-hero__content-right">
-          <div className="es-fullpage-hero__content__intro">
-            {isFilled.keyText(slice.primary.eyebrowHeadline) && (
-              <p className="es-fullpage-hero__content__intro__eyebrow">
-                {slice.primary.eyebrowHeadline}
-              </p>
-            )}
-            {isFilled.richText(slice.primary.title) && (
-              <div className="es-fullpage-hero__content__intro__headline">
-                <PrismicRichText field={slice.primary.title} />
-              </div>
-            )}
-            {isFilled.richText(slice.primary.description) && (
-              <div className="es-fullpage-hero__content__intro__description">
-                <PrismicRichText field={slice.primary.description} />
-              </div>
-            )}
-            <PrismicNextLink
-              className="es-call-to-action__link font-sans"
-              field={slice.primary.callToActionLink}
+        {/* Image Section */}
+        {isFilled.image(slice.primary.image) && (
+          <div className="w-full">
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="w-full h-auto rounded-3xl shadow-2xl dark:shadow-none dark:border dark:border-zinc-800 object-cover bg-slate-100 dark:bg-zinc-900"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
             />
           </div>
+        )}
+
+        {/* Text / Body Section */}
+        <div className="flex flex-col gap-8 max-w-3xl items-start">
+          {isFilled.richText(slice.primary.description) && (
+            <div className="text-lg md:text-xl leading-relaxed text-slate-600 dark:text-zinc-400 [&>p]:mb-6 last:[&>p]:mb-0 [&>p>a]:text-teal-500 [&>p>a]:underline [&>p>a]:underline-offset-4 hover:[&>p>a]:text-teal-600 transition-colors">
+              <PrismicRichText field={slice.primary.description} />
+            </div>
+          )}
+          
+          <PrismicNextLink
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-teal-500 to-purple-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-teal-500/25 dark:shadow-none hover:shadow-xl hover:shadow-purple-500/30 transition-all hover:-translate-y-1 active:translate-y-0"
+            field={slice.primary.callToActionLink}
+          />
         </div>
+
       </div>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .es-bounded {
-              margin: 0px;
-              min-width: 0px;
-              position: relative;
-            }
-
-            .es-fullpage-hero {
-              background-color: #fff;
-              color: #333;
-            }
-
-            .es-fullpage-hero__image {
-              max-width: 100%;
-              height: auto;
-              align-self: center;
-            }
-
-            .es-fullpage-hero__image--left > div:first-child {
-              order: 1;
-            }
-
-            .es-fullpage-hero__image--left > div:nth-child(2) {
-              order: 2;
-            }
-
-            .es-fullpage-hero__image--right > div:first-child {
-              order: 2;
-            }
-
-            .es-fullpage-hero__image--right > div:nth-child(2) {
-              order: 1;
-            }
-
-            .es-fullpage-hero__content {
-              display: flex;
-              flex-direction: column;
-              gap: 2rem;
-              margin: 0 auto;
-              max-width: 100%;
-            }
-
-            .es-fullpage-hero__content-right {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-around;
-              padding: 1.5rem;
-            }
-
-            @media (min-width: 1080px) {
-              .es-fullpage-hero__content {
-                  flex-direction: row;
-              }
-
-              .es-fullpage-hero__content > div {
-                  width: 50%;
-              }
-            }
-
-            @media (min-width: 1200px) {
-              .es-fullpage-hero__content {
-                  max-width: 1200px;
-              }
-            }
-
-            .es-fullpage-hero__content__intro {
-              display: grid;
-              gap: 1rem;
-            }
-
-            .es-fullpage-hero__content__intro__eyebrow {
-              color: #47C1AF;
-              font-size: 1.15rem;
-              font-weight: 500;
-              margin: 0;
-            }
-
-            .es-fullpage-hero__content__intro__headline {
-              font-size: 1.625rem;
-              font-weight: 700;
-            }
-
-            .es-fullpage-hero__content__intro__headline * {
-              margin: 0;
-            }
-
-            @media (min-width: 640px) {
-              .es-fullpage-hero__content__intro__headline {
-                  font-size: 2rem;
-              }
-            }
-
-            @media (min-width: 1024px) {
-              .es-fullpage-hero__content__intro__headline {
-                  font-size: 2.5rem;
-              }
-            }
-
-            @media (min-width: 1200px) {
-              .es-fullpage-hero__content__intro__headline {
-                  font-size: 2.75rem;
-              }
-            }
-
-            .es-fullpage-hero__content__intro__description {
-              font-size: 1.2rem;
-              max-width: 38rem;
-            }
-
-            .es-fullpage-hero__content__intro__description > p {
-              margin: 0;
-            }
-
-            @media (min-width: 1200px) {
-              .es-fullpage-hero__content__intro__description {
-                  font-size: 1.4rem;
-              }
-            }
-
-            .es-call-to-action__link {
-              justify-self: flex-start;
-              border-radius: 9999px;
-              font-size: 0.875rem;
-              font-weight: 700;
-              line-height: 1.3;
-              padding: 1rem 2.625rem;
-              text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-              transition: opacity 100ms linear;
-              background-image: linear-gradient(to right, #14b8a6, #a855f7);
-              color: #fff;
-            }
-
-            .es-call-to-action__link:hover {
-              opacity: 0.9;
-            }
-          `,
-        }}
-      />
     </section>
   );
 };
