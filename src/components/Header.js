@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
+import { Menu, X } from "lucide-react";
 
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
@@ -96,6 +98,7 @@ export const Header = ({
   settings,
 }) => {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <Bounded as="header" size="widest" className="!py-4">
@@ -132,8 +135,47 @@ export const Header = ({
         </nav>
         <div className="flex items-center gap-4 py-1">
           <ThemeToggle />
+          <button
+            className="md:hidden p-2 text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-zinc-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Navigation"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="md:hidden py-4 border-t border-slate-200 dark:border-zinc-800">
+          <ul className="flex flex-col gap-4 px-2">
+            <NavItem>
+              <Link href="/" aria-current={pathname === "/" ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)}>
+                <PrismicText field={navigation.data.homepageLabel} />
+              </Link>
+            </NavItem>
+            {navigation.data?.links.map((item) => {
+              const label = prismic.asText(item.label);
+              if (label === "Contact Me") {
+                return (
+                  <NavItem key={label}>
+                    <Link href="https://github.com/rmontero" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                      GitHub
+                    </Link>
+                  </NavItem>
+                );
+              }
+              const href = prismic.asLink(item.link);
+              return (
+                <NavItem key={label}>
+                  <PrismicNextLink field={item.link} aria-current={pathname === href ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)}>
+                    <PrismicText field={item.label} />
+                  </PrismicNextLink>
+                </NavItem>
+              );
+            })}
+          </ul>
+        </div>
+      )}
 
       {withProfile && <Profile size={profileSize} profilePicture={settings?.data?.profilePicture} />}
     </Bounded>
