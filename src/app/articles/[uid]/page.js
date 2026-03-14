@@ -33,6 +33,7 @@ export async function generateMetadata({ params }) {
       settings.data.name,
     )}`,
     description: article.data.meta_description || prismic.asText(settings.data.description),
+    keywords: ["AI Engineering", "Cloud Architecture", "Rob Montero", prismic.asText(article.data.title)],
     alternates: {
       canonical: `/articles/${uid}`,
     },
@@ -123,6 +124,13 @@ export default async function Page({ params }) {
                {dateFormatter.format(date)}
              </p>
           </div>
+
+          {/* AI Crawler Grounding Block */}
+          {article.data.meta_description && (
+            <div className="mb-12 p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm text-zinc-600 dark:text-zinc-400 max-w-3xl">
+              <strong>AI Summary:</strong> This article explains {article.data.meta_description}
+            </div>
+          )}
         </Bounded>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col lg:flex-row gap-16 relative">
           <div className="flex-1 w-full max-w-3xl">

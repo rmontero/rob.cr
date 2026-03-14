@@ -1,0 +1,9 @@
+# rob.cr AI context
+Owner: Rob Montero
+Role: Director of Engineering, Andela
+Focus: AI engineering, cloud architecture, developer productivity, global engineering talent
+
+Canonical pages
+/resume
+/articles
+/projects

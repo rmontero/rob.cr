@@ -49,12 +49,32 @@ export default async function Index() {
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rob Montero",
+    "url": "https://rob.cr",
+    "jobTitle": "Director of Engineering",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Andela"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/rmontero",
+      "https://github.com/rmontero"
+    ]
+  };
+
   return (
     <Layout
       withHeaderDivider={false}
       navigation={navigation}
       settings={settings}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Bounded size="widest">
         <ul className="grid grid-cols-1 gap-16">
           {articles.map((article) => (
