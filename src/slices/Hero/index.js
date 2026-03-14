@@ -14,7 +14,7 @@ const Hero = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative w-full py-12 md:py-20"
+      className="relative w-full py-12 md:py-20 overflow-hidden"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-10 md:gap-14">
         
@@ -26,7 +26,7 @@ const Hero = ({ slice }) => {
             </p>
           )}
           {isFilled.richText(slice.primary.title) && (
-            <div className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-zinc-50 leading-tight [&>p]:m-0">
+            <div className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight [&>p]:m-0 break-words">
               <PrismicRichText field={slice.primary.title} />
             </div>
           )}
@@ -37,7 +37,7 @@ const Hero = ({ slice }) => {
           <div className="w-full">
             <PrismicNextImage
               field={slice.primary.image}
-              className="w-full h-auto rounded-3xl shadow-2xl dark:shadow-none dark:border dark:border-zinc-800 object-cover bg-slate-100 dark:bg-zinc-900"
+              className="w-full h-auto rounded-3xl shadow-2xl dark:shadow-none dark:border dark:border-zinc-800 object-cover bg-zinc-100 dark:bg-zinc-900 max-w-full"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
             />
           </div>
@@ -46,7 +46,7 @@ const Hero = ({ slice }) => {
         {/* Text / Body Section */}
         <div className="flex flex-col gap-8 max-w-3xl items-start">
           {isFilled.richText(slice.primary.description) && (
-            <div className="text-lg md:text-xl leading-relaxed text-slate-600 dark:text-zinc-400 [&>p]:mb-6 last:[&>p]:mb-0 [&>p>a]:text-teal-500 [&>p>a]:underline [&>p>a]:underline-offset-4 hover:[&>p>a]:text-teal-600 transition-colors">
+            <div className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 [&>p]:mb-6 last:[&>p]:mb-0 [&>p>a]:text-teal-500 [&>p>a]:underline [&>p>a]:underline-offset-4 hover:[&>p>a]:text-teal-600 transition-colors break-words">
               <PrismicRichText field={slice.primary.description} />
             </div>
           )}

@@ -49,7 +49,7 @@ const Timeline = ({ slice }) => {
                   )}
                   
                   {prismic.isFilled.richText(item.description) && (
-                    <div className="prose prose-gray max-w-none">
+                    <div className="prose prose-zinc max-w-none">
                       <PrismicRichText 
                         field={item.description}
                         components={{

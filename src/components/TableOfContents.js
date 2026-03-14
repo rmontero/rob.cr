@@ -69,7 +69,7 @@ export function TableOfContents() {
           <a
             href={`#${heading.id}`}
             onClick={(e) => navigateTo(e, heading.id)}
-            className="text-sm text-slate-500 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors block leading-tight"
+            className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors block leading-tight"
           >
             {heading.text}
           </a>
@@ -82,7 +82,7 @@ export function TableOfContents() {
     <>
       {/* Desktop Floating Sidebar */}
       <div className="hidden lg:block sticky top-32 w-64 shrink-0 pl-10 self-start max-h-[calc(100vh-10rem)] overflow-y-auto custom-scrollbar">
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100 mb-4">
+        <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 mb-4">
           On this page
         </h3>
         {menuItems}
@@ -91,8 +91,8 @@ export function TableOfContents() {
       {/* Mobile Sticky Jump Menu */}
       <div className="lg:hidden fixed bottom-6 right-6 z-50">
         {isOpen && (
-          <div className="absolute bottom-16 right-0 mb-2 w-64 bg-white dark:bg-zinc-900 block rounded-2xl shadow-xl border border-slate-200 dark:border-zinc-800 p-6 max-h-[60vh] overflow-y-auto">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100 mb-4">
+          <div className="absolute bottom-16 right-0 mb-2 w-64 bg-white dark:bg-zinc-900 block rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-800 p-6 max-h-[60vh] overflow-y-auto">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-900 dark:text-zinc-100 mb-4">
               Jump to
             </h3>
             {menuItems}
@@ -100,7 +100,7 @@ export function TableOfContents() {
         )}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-center p-4 bg-slate-900 text-white dark:bg-zinc-50 dark:text-zinc-900 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform"
+          className="flex items-center justify-center p-4 bg-zinc-900 text-white dark:bg-zinc-50 dark:text-zinc-900 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform"
           aria-label="Table of Contents"
         >
           <List size={24} />

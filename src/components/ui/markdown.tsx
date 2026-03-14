@@ -7,7 +7,7 @@ import clsx from "clsx"
 
 export function Markdown({ children, className }: { children: string, className?: string }) {
   return (
-    <div className={clsx("prose prose-neutral dark:prose-invert", className)}>
+    <div className={clsx("prose prose-zinc dark:prose-invert", className)}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{

@@ -98,14 +98,14 @@ export default async function Page({ params }) {
       />
       <article>
         <Bounded className="pb-0" size="widest">
-          <h1 className="mb-8 text-5xl font-bold tracking-tighter text-slate-900 md:text-6xl dark:text-zinc-50 leading-tight">
+          <h1 className="mb-8 text-4xl font-bold tracking-tighter text-zinc-900 md:text-5xl dark:text-zinc-50 leading-tight">
             <PrismicText field={article.data.title} />
           </h1>
-          <div className="flex items-center gap-4 mb-16 border-b border-slate-200 dark:border-zinc-800 pb-8">
+          <div className="flex items-center gap-4 mb-16 border-b border-zinc-200 dark:border-zinc-800 pb-8">
              {/* Note: since there's no author image defined in article settings, just date is kept */}
-             <div className="flex items-center gap-2 text-sm font-medium text-slate-900 dark:text-zinc-50">
+             <div className="flex items-center gap-2 text-sm font-medium text-zinc-900 dark:text-zinc-50">
                {prismic.isFilled.image(settings.data.profilePicture) ? (
-                 <div className="relative h-8 w-8 overflow-hidden rounded-full bg-slate-300">
+                 <div className="relative h-8 w-8 overflow-hidden rounded-full bg-zinc-300">
                    <PrismicNextImage
                      field={settings.data.profilePicture}
                      fill={true}
@@ -114,12 +114,12 @@ export default async function Page({ params }) {
                    />
                  </div>
                ) : (
-                 <span className="h-8 w-8 rounded-full bg-slate-200 dark:bg-zinc-800 flex items-center justify-center text-xs">RM</span>
+                 <span className="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-xs">RM</span>
                )}
                Rob Montero
              </div>
-             <span className="text-slate-400 dark:text-zinc-600">&bull;</span>
-             <p className="text-sm font-medium text-slate-600 dark:text-zinc-400">
+             <span className="text-zinc-400 dark:text-zinc-600">&bull;</span>
+             <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                {dateFormatter.format(date)}
              </p>
           </div>

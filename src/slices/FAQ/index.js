@@ -55,9 +55,9 @@ const FAQ = ({ slice }) => {
               </svg>
             </button>
             {openItems.has(index) && (
-              <div className="px-6 pb-4 border-t border-gray-100">
+              <div className="px-6 pb-4 border-t border-zinc-100">
                 {prismic.isFilled.richText(item.answer) && (
-                  <div className="prose prose-gray max-w-none pt-4">
+                  <div className="prose prose-zinc max-w-none pt-4">
                     <PrismicRichText field={item.answer} />
                   </div>
                 )}

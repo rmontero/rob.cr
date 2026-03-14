@@ -34,10 +34,10 @@ const FeatureList = ({ slice }) => {
               </div>
             )}
             {prismic.isFilled.keyText(item.title) && (
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
+              <h3 className="text-xl font-semibold text-zinc-900 mb-3">{item.title}</h3>
             )}
             {prismic.isFilled.richText(item.description) && (
-              <div className="prose prose-gray max-w-none">
+              <div className="prose prose-zinc max-w-none">
                 <PrismicRichText 
                   field={item.description}
                   components={{

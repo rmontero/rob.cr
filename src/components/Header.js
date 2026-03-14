@@ -13,14 +13,14 @@ import { Heading } from "./Heading";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Logo = () => (
-  <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 dark:text-zinc-50 hover:opacity-80 transition-opacity">
+  <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 hover:opacity-80 transition-opacity">
     <span className="text-2xl">🇨🇷</span> <span className="mt-1">Rob.cr.</span>
   </Link>
 );
 
 const NavItem = ({ children }) => {
   return (
-    <li className="text-sm font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-zinc-50 transition-colors">
+    <li className="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
       {children}
     </li>
   );
@@ -39,7 +39,7 @@ const Profile = ({ size = "large", profilePicture }) => {
     return (
       <div className="flex items-center gap-4 mt-8">
         {prismic.isFilled.image(profilePicture) && (
-          <Link href="/" className="relative h-12 w-12 overflow-hidden rounded-full bg-slate-300 shrink-0">
+          <Link href="/" className="relative h-12 w-12 overflow-hidden rounded-full bg-zinc-300 shrink-0">
             <PrismicNextImage
               field={profilePicture}
               fill={true}
@@ -64,7 +64,7 @@ const Profile = ({ size = "large", profilePicture }) => {
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
         <div className="flex flex-col gap-8">
           {prismic.isFilled.image(profilePicture) && (
-            <div className="relative h-32 w-32 md:h-48 md:w-48 overflow-hidden rounded-full bg-slate-200 dark:bg-zinc-800">
+            <div className="relative h-32 w-32 md:h-48 md:w-48 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
               <PrismicNextImage
                 field={profilePicture}
                 fill={true}
@@ -74,18 +74,18 @@ const Profile = ({ size = "large", profilePicture }) => {
               />
             </div>
           )}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-sans font-bold tracking-tighter text-slate-900 dark:text-zinc-50 max-w-4xl leading-none">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-sans font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 max-w-4xl leading-none">
             {overriddenName}
           </h1>
         </div>
         <div className="lg:max-w-md flex flex-col gap-6">
-          <p className="text-base md:text-lg leading-relaxed text-slate-600 dark:text-zinc-300 font-serif">
+          <p className="text-base md:text-lg leading-relaxed text-zinc-600 dark:text-zinc-300 font-serif">
             {overriddenDescription}
           </p>
 
         </div>
       </div>
-      <div className="mt-16 border-b-4 border-double border-slate-200 dark:border-zinc-800 w-full" />
+      <div className="mt-16 border-b-4 border-double border-zinc-200 dark:border-zinc-800 w-full" />
     </div>
   );
 };
@@ -105,7 +105,7 @@ export const Header = ({
       <div className="flex items-center justify-between w-full py-6">
         <Logo />
         <nav className="hidden md:block">
-          <ul className="flex items-center gap-8 rounded-full border border-slate-200 dark:border-zinc-800 px-6 py-2">
+          <ul className="flex items-center gap-8 rounded-full border border-zinc-200 dark:border-zinc-800 px-6 py-2">
             <NavItem>
               <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
                 <PrismicText field={navigation.data.homepageLabel} />
@@ -127,7 +127,7 @@ export const Header = ({
         <div className="flex items-center gap-4 py-1">
           <ThemeToggle />
           <button
-            className="md:hidden p-2 text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-zinc-50"
+            className="md:hidden p-2 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Navigation"
           >
@@ -137,7 +137,7 @@ export const Header = ({
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden py-4 border-t border-slate-200 dark:border-zinc-800">
+        <div className="md:hidden py-4 border-t border-zinc-200 dark:border-zinc-800">
           <ul className="flex flex-col gap-4 px-2">
             <NavItem>
               <Link href="/" aria-current={pathname === "/" ? "page" : undefined} onClick={() => setIsMobileMenuOpen(false)}>
