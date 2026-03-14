@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className="overflow-x-hidden antialiased">
+      <body className="overflow-x-hidden antialiased font-serif">
         <main>
           {process.env.NODE_ENV === "development" && (
             <div

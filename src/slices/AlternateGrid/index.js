@@ -88,7 +88,6 @@ const AlternateGrid = ({ slice }) => {
             }
 
             .es-alternate-grid {
-                font-family: system-ui, sans-serif;
                 background-color: #fff;
                 color: #333;
             }

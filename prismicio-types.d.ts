@@ -70,6 +70,10 @@ type ContentRelationshipFieldWithData<
 }[Exclude<TCustomType[number], string>["id"]];
 
 type ArticleDocumentDataSlicesSlice =
+  | HeroSlice
+  | CustomerLogosSlice
+  | CallToActionSlice
+  | AlternateGridSlice
   | TimelineSlice
   | TestimonialsSlice
   | GallerySlice

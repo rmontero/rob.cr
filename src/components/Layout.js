@@ -6,6 +6,7 @@ export function Layout({
   settings,
   withHeaderDivider,
   withProfile,
+  profileSize,
   withSignUpForm,
   children,
 }) {
@@ -13,6 +14,7 @@ export function Layout({
     <div className="text-slate-700">
       <Header
         withProfile={withProfile}
+        profileSize={profileSize}
         withDivider={withHeaderDivider}
         navigation={navigation}
         settings={settings}

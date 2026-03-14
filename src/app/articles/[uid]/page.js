@@ -82,7 +82,8 @@ export default async function Page({ params }) {
     <Layout
       navigation={navigation}
       withHeaderDivider={false}
-      withProfile={false}
+      withProfile={true}
+      profileSize="small"
       settings={settings}
     >
       <Bounded>
