@@ -10,6 +10,7 @@ import { Layout } from "@/components/Layout";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { HorizontalDivider } from "@/components/HorizontalDivider";
+import { TableOfContents } from "@/components/TableOfContents";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -123,7 +124,12 @@ export default async function Page({ params }) {
              </p>
           </div>
         </Bounded>
-        <SliceZone slices={article.data.slices} components={components} />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col lg:flex-row gap-16 relative">
+          <div className="flex-1 w-full max-w-3xl">
+            <SliceZone slices={article.data.slices} components={components} />
+          </div>
+          <TableOfContents />
+        </div>
       </article>
     </Layout>
   );

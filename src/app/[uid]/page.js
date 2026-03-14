@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { Layout } from "@/components/Layout";
+import { TableOfContents } from "@/components/TableOfContents";
 
 export async function generateMetadata({ params }) {
   const { uid } = await params;
@@ -43,7 +44,12 @@ export default async function Page({ params }) {
 
   return (
     <Layout navigation={navigation} settings={settings}>
-      <SliceZone slices={page.data.slices} components={components} />
+      <article className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col lg:flex-row gap-16 relative py-12">
+        <div className="flex-1 w-full max-w-3xl">
+          <SliceZone slices={page.data.slices} components={components} />
+        </div>
+        <TableOfContents />
+      </article>
     </Layout>
   );
 }
