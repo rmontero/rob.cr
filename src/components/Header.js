@@ -113,15 +113,6 @@ export const Header = ({
             </NavItem>
             {navigation.data?.links.map((item) => {
               const label = prismic.asText(item.label);
-              if (label === "Contact Me") {
-                return (
-                  <NavItem key={label}>
-                    <Link href="https://github.com/rmontero" target="_blank" rel="noopener noreferrer">
-                      GitHub
-                    </Link>
-                  </NavItem>
-                );
-              }
               const href = prismic.asLink(item.link);
               return (
                 <NavItem key={label}>
@@ -155,15 +146,6 @@ export const Header = ({
             </NavItem>
             {navigation.data?.links.map((item) => {
               const label = prismic.asText(item.label);
-              if (label === "Contact Me") {
-                return (
-                  <NavItem key={label}>
-                    <Link href="https://github.com/rmontero" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
-                      GitHub
-                    </Link>
-                  </NavItem>
-                );
-              }
               const href = prismic.asLink(item.link);
               return (
                 <NavItem key={label}>
