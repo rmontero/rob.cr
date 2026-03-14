@@ -6,6 +6,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${inter.className} ${libre_baskerville.className}`}
+      suppressHydrationWarning
     >
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -37,8 +39,9 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className="overflow-x-hidden antialiased font-serif">
-        <main>
+      <body className="overflow-x-hidden antialiased font-serif bg-white text-slate-900 dark:bg-zinc-950 dark:text-zinc-50 selection:bg-slate-900 selection:text-white dark:selection:bg-white dark:selection:text-slate-900">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <main>
           {process.env.NODE_ENV === "development" && (
             <div
               style={{
@@ -69,6 +72,7 @@ export default function RootLayout({ children }) {
           <SpeedInsights />
           <Analytics />
         </main>
+        </ThemeProvider>
       </body>
     </html>
   );

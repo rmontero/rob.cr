@@ -1,93 +1,90 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as prismic from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 
 import { Bounded } from "./Bounded";
 import { Heading } from "./Heading";
-import { HorizontalDivider } from "./HorizontalDivider";
+import { ThemeToggle } from "./ThemeToggle";
 
-const Profile = ({ name, description, profilePicture, size = "large" }) => {
+const Logo = () => (
+  <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 dark:text-zinc-50 hover:opacity-80 transition-opacity">
+    <span className="text-2xl">🇨🇷</span> <span className="mt-1">Rob.cr.</span>
+  </Link>
+);
+
+const NavItem = ({ children }) => {
+  return (
+    <li className="text-sm font-medium text-slate-600 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-zinc-50 transition-colors">
+      {children}
+    </li>
+  );
+};
+
+
+
+const Profile = ({ size = "large", profilePicture }) => {
   const isSmall = size === "small";
+
+  const overriddenName = "Rob Montero";
+  const overriddenDescription =
+    "I’m a dynamic and strategic leader with over 25 years of experience in the tech industry and multiple domains such as healthcare, higher education, and consumer goods. I excel at leading cross-functional teams to develop robust, high-performance web and mobile applications. My extensive technical expertise spans both back end and front end development, with a strong focus on CMS, data migration, API development, and modern JavaScript frameworks.";
 
   if (isSmall) {
     return (
-      <div className="px-4">
-        <div className="flex items-center justify-center gap-4">
-          <PrismicNextLink href="/" tabIndex="-1">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full bg-slate-300">
-              {prismic.isFilled.image(profilePicture) && (
-                <PrismicNextImage
-                  field={profilePicture}
-                  fill={true}
-                  sizes="100vw"
-                  className="object-cover"
-                />
-              )}
-            </div>
-          </PrismicNextLink>
-          {(prismic.isFilled.richText(name) ||
-            prismic.isFilled.richText(description)) && (
-            <div className="flex flex-col text-left">
-              {prismic.isFilled.richText(name) && (
-                <Heading size="xs" className="mb-0 font-sans">
-                  <PrismicNextLink href="/">
-                    <PrismicText field={name} />
-                  </PrismicNextLink>
-                </Heading>
-              )}
-              {prismic.isFilled.richText(description) && (
-                <p className="font-serif text-sm italic leading-normal tracking-tight text-slate-500">
-                  <PrismicText field={description} />
-                </p>
-              )}
-            </div>
-          )}
+      <div className="flex items-center gap-4 mt-8">
+        {prismic.isFilled.image(profilePicture) && (
+          <Link href="/" className="relative h-12 w-12 overflow-hidden rounded-full bg-slate-300 shrink-0">
+            <PrismicNextImage
+              field={profilePicture}
+              fill={true}
+              sizes="3rem"
+              className="object-cover"
+            />
+          </Link>
+        )}
+        <div className="flex flex-col text-left">
+          <Heading size="xs" className="mb-0 font-sans tracking-tight dark:text-zinc-50">
+            <Link href="/">
+              {overriddenName}
+            </Link>
+          </Heading>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="px-4">
-      <div className="grid max-w-lg grid-cols-1 justify-items-center gap-8">
-        <PrismicNextLink href="/" tabIndex="-1">
-          <div className="relative h-40 w-40 overflow-hidden rounded-full bg-slate-300">
-            {prismic.isFilled.image(profilePicture) && (
+    <div className="mt-20 lg:mt-32 w-full">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+        <div className="flex flex-col gap-8">
+          {prismic.isFilled.image(profilePicture) && (
+            <div className="relative h-32 w-32 md:h-48 md:w-48 overflow-hidden rounded-full bg-slate-200 dark:bg-zinc-800">
               <PrismicNextImage
                 field={profilePicture}
                 fill={true}
-                sizes="100vw"
+                sizes="(max-width: 768px) 8rem, 12rem"
+                priority={true}
                 className="object-cover"
               />
-            )}
-          </div>
-        </PrismicNextLink>
-        {(prismic.isFilled.richText(name) ||
-          prismic.isFilled.richText(description)) && (
-          <div className="grid grid-cols-1 gap-2 text-center">
-            {prismic.isFilled.richText(name) && (
-              <Heading className="font-sans">
-                <PrismicNextLink href="/">
-                  <PrismicText field={name} />
-                </PrismicNextLink>
-              </Heading>
-            )}
-            {prismic.isFilled.richText(description) && (
-              <p className="font-serif text-2xl italic leading-normal tracking-tight text-slate-500">
-                <PrismicText field={description} />
-              </p>
-            )}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
+            </div>
+          )}
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-sans font-bold tracking-tighter text-slate-900 dark:text-zinc-50 max-w-4xl leading-none">
+            {overriddenName}
+          </h1>
+        </div>
+        <div className="lg:max-w-md flex flex-col gap-6">
+          <p className="text-base md:text-lg leading-relaxed text-slate-600 dark:text-zinc-300 font-serif">
+            {overriddenDescription}
+          </p>
 
-const NavItem = ({ children }) => {
-  return (
-    <li className="font-semibold tracking-tight text-slate-800">{children}</li>
+        </div>
+      </div>
+      <div className="mt-16 border-b-4 border-double border-slate-200 dark:border-zinc-800 w-full" />
+    </div>
   );
 };
 
@@ -98,43 +95,47 @@ export const Header = ({
   navigation,
   settings,
 }) => {
+  const pathname = usePathname();
+
   return (
-    <Bounded as="header">
-      <div className="grid grid-cols-1 justify-items-center gap-10 md:gap-20">
-        {profileSize === "small" && withProfile && (
-          <Profile
-            size="small"
-            name={settings.data.name}
-            description={settings.data.description}
-            profilePicture={settings.data.profilePicture}
-          />
-        )}
-        <nav>
-          <ul className="flex flex-wrap justify-center gap-10">
+    <Bounded as="header" size="widest" className="!py-4">
+      <div className="flex items-center justify-between w-full py-6">
+        <Logo />
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-8 rounded-full border border-slate-200 dark:border-zinc-800 px-6 py-2">
             <NavItem>
-              <Link href="/">
+              <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
                 <PrismicText field={navigation.data.homepageLabel} />
               </Link>
             </NavItem>
-            {navigation.data?.links.map((item) => (
-              <NavItem key={prismic.asText(item.label)}>
-                <PrismicNextLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicNextLink>
-              </NavItem>
-            ))}
+            {navigation.data?.links.map((item) => {
+              const label = prismic.asText(item.label);
+              if (label === "Contact Me") {
+                return (
+                  <NavItem key={label}>
+                    <Link href="https://github.com/rmontero" target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </Link>
+                  </NavItem>
+                );
+              }
+              const href = prismic.asLink(item.link);
+              return (
+                <NavItem key={label}>
+                  <PrismicNextLink field={item.link} aria-current={pathname === href ? "page" : undefined}>
+                    <PrismicText field={item.label} />
+                  </PrismicNextLink>
+                </NavItem>
+              );
+            })}
           </ul>
         </nav>
-        {profileSize !== "small" && withProfile && (
-          <Profile
-            size="large"
-            name={settings.data.name}
-            description={settings.data.description}
-            profilePicture={settings.data.profilePicture}
-          />
-        )}
-        {withDivider && <HorizontalDivider />}
+        <div className="flex items-center gap-4 py-1">
+          <ThemeToggle />
+        </div>
       </div>
+
+      {withProfile && <Profile size={profileSize} profilePicture={settings?.data?.profilePicture} />}
     </Bounded>
   );
 };

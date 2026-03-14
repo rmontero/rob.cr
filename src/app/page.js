@@ -13,14 +13,26 @@ export async function generateMetadata() {
     metadataBase: new URL('https://rob.cr'),
     title: prismic.asText(settings.data.name),
     description: prismic.asText(settings.data.description),
+    alternates: {
+      canonical: '/',
+    },
     openGraph: {
       title: prismic.asText(settings.data.name),
       description: prismic.asText(settings.data.description),
+      url: 'https://rob.cr',
+      siteName: prismic.asText(settings.data.name),
       images: [
         {
           url: prismic.asImageSrc(settings.data.profilePicture)
         },
       ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: prismic.asText(settings.data.name),
+      description: prismic.asText(settings.data.description),
+      images: [prismic.asImageSrc(settings.data.profilePicture)],
     },
   };
 }

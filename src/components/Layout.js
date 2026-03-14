@@ -7,7 +7,6 @@ export function Layout({
   withHeaderDivider,
   withProfile,
   profileSize,
-  withSignUpForm,
   children,
 }) {
   return (
@@ -20,7 +19,7 @@ export function Layout({
         settings={settings}
       />
       <main>{children}</main>
-      <Footer withSignUpForm={withSignUpForm} settings={settings} />
+      <Footer />
     </div>
   );
 }
