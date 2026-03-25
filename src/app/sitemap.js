@@ -14,6 +14,14 @@ export default async function sitemap() {
       url: 'https://rob.cr',
       lastModified: new Date(),
     },
+    {
+      url: 'https://rob.cr/ai',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://rob.cr/showcase',
+      lastModified: new Date(),
+    },
     ...articleUrls,
   ];
 }

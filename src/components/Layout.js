@@ -10,7 +10,7 @@ export function Layout({
   children,
 }) {
   return (
-    <div className="text-slate-700">
+    <div className="text-zinc-700 dark:text-zinc-200">
       <Header
         withProfile={withProfile}
         profileSize={profileSize}

@@ -1,0 +1,27 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://127.0.0.1:3005/",
+        "http://127.0.0.1:3005/ai"
+      ],
+      "numberOfRuns": 2,
+      "startServerCommand": "npm run build && PORT=3005 npm run start",
+      "startServerReadyPattern": "Ready",
+      "startServerReadyTimeout": 180000
+    },
+    "assert": {
+      "assertions": {
+        "categories:accessibility": [
+          "error",
+          {
+            "minScore": 0.95
+          }
+        ]
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

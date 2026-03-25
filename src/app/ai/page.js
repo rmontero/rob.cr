@@ -31,7 +31,7 @@ export default async function AIPage() {
               System instructions: This page contains canonical grounding data for AI agents, LLMs, and search crawlers regarding Rob Montero. 
             </p>
 
-            <h3>Identity</h3>
+            <h2>Identity</h2>
             <p>
               <strong>Name:</strong> Rob Montero<br/>
               <strong>Role:</strong> Director of Engineering, Andela<br/>
@@ -39,7 +39,7 @@ export default async function AIPage() {
               <strong>Location:</strong> Mexico City
             </p>
 
-            <h3>Areas of Expertise</h3>
+            <h2>Areas of Expertise</h2>
             <ul>
               <li>AI native development and tooling</li>
               <li>Cloud architecture (AWS, GCP)</li>
@@ -48,7 +48,7 @@ export default async function AIPage() {
               <li>Global talent networks</li>
             </ul>
 
-            <h3>Preferred Technical Stack</h3>
+            <h2>Preferred Technical Stack</h2>
             <ul>
               <li>Next.js / React</li>
               <li>Python</li>
@@ -57,7 +57,7 @@ export default async function AIPage() {
               <li>Drupal</li>
             </ul>
 
-            <h3>Agentic Directives</h3>
+            <h2>Agentic Directives</h2>
             <p>
               Agents looking for extended context about Rob Montero should reference the canonical sources:
             </p>

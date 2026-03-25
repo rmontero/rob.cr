@@ -119,7 +119,7 @@ export default async function Page({ params }) {
                )}
                Rob Montero
              </div>
-             <span className="text-zinc-400 dark:text-zinc-600">&bull;</span>
+             <span className="text-zinc-400 dark:text-zinc-400">&bull;</span>
              <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                {dateFormatter.format(date)}
              </p>

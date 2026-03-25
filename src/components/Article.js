@@ -20,7 +20,7 @@ export function Article({ article }) {
 
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <PrismicNextLink document={article} tabIndex="-1">
+      <PrismicNextLink document={article} tabIndex="-1" aria-hidden="true">
         <div className="aspect-h-3 aspect-w-4 relative bg-gray-100">
           {prismic.isFilled.image(featuredImage) && (
             <PrismicNextImage

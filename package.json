@@ -9,6 +9,7 @@
     "next:dev": "next",
     "build": "next build",
     "start": "next start",
+    "a11y:check": "lhci autorun --config=./lighthouserc.json",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx",
     "slicemachine": "start-slicemachine",
@@ -33,6 +34,7 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@eslint/eslintrc": "^3.3.1",
     "@slicemachine/adapter-next": "^0.3.84",
     "@tailwindcss/aspect-ratio": "^0.4.2",

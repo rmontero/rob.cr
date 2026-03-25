@@ -14,7 +14,20 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 hover:opacity-80 transition-opacity">
-    <span className="text-2xl">🇨🇷</span> <span className="mt-1">Rob.cr.</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 60 36"
+      className="h-6 w-auto rounded-sm shadow-sm"
+      aria-label="Costa Rica flag"
+      role="img"
+    >
+      <rect width="60" height="36" fill="#002B7F" />
+      <rect y="6" width="60" height="24" fill="#fff" />
+      <rect y="12" width="60" height="12" fill="#CE1126" />
+      <rect y="6" width="60" height="6" fill="#fff" />
+      <rect y="24" width="60" height="6" fill="#fff" />
+    </svg>
+    <span className="mt-1">Rob.cr</span>
   </Link>
 );
 
