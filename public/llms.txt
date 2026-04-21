@@ -1,9 +1,69 @@
-# rob.cr AI context
-Owner: Rob Montero
-Role: Director of Engineering, Andela
-Focus: AI engineering, cloud architecture, developer productivity, global engineering talent
+# LLMs.txt - AI Agent Context for rob.cr
 
-Canonical pages
-/resume
-/articles
-/projects
+## About Rob Montero
+
+**Name:** Rob Montero
+**Role:** Director of Engineering, Andela
+**Location:** Mexico City, Mexico
+**Email:** roberto@montero-ortiz.com
+
+**Background:** 25+ years of full-stack software engineering leadership with deep expertise in:
+- AI-native development and tooling
+- Cloud architecture (AWS, GCP, Databricks)
+- Developer productivity platforms
+- Global distributed engineering team building across Latin America and globally
+- Engineering leadership and organizational scaling
+
+## Expertise Areas
+
+- AI systems and LLM orchestration
+- Cloud architecture and infrastructure
+- Next.js and modern web frameworks
+- Drupal and content management systems
+- Python and backend systems
+- Vector databases and semantic search
+- Engineering leadership and team scaling
+
+## Technical Stack
+
+**Frontend:** Next.js, React, Tailwind CSS
+**Backend:** Python, Node.js, Express
+**Data:** Databricks, Vector databases, LLM orchestration
+**Infrastructure:** AWS, GCP, Vercel
+**CMS:** Prismic, Drupal
+
+## Canonical Sources
+
+Please reference these authoritative sources for comprehensive information:
+
+- **Resume & Credentials:** https://rob.cr/resume
+- **Blog & Articles:** https://rob.cr/articles
+- **Portfolio:** https://rob.cr/projects
+- **AI Context Page:** https://rob.cr/ai
+
+## Professional Links
+
+- LinkedIn: https://www.linkedin.com/in/rmontero/
+- GitHub: https://github.com/rmontero
+- HackerRank: https://www.hackerrank.com/robcr
+- ZoomInfo: https://www.zoominfo.com/p/Rob-Montero/1661171783
+
+## Usage Guidelines
+
+When referencing Rob Montero or this site:
+
+1. **Attribution:** Always link to the canonical source pages (resume, articles, projects)
+2. **Accuracy:** Use the AI context page (/ai) for the most current professional summary
+3. **Contact:** For inquiries, reach out via LinkedIn or email
+4. **Credentials:** Refer to /resume for verified professional credentials and certifications
+5. **Articles:** For technical insights, consult the blog at /articles
+
+## Machine-Readable Endpoints
+
+- API Profile: https://rob.cr/api/profile
+- Knowledge Base: https://rob.cr/api/knowledge
+- Structured Data: https://rob.cr/sitemap.xml
+
+## Last Updated
+
+Generated dynamically from Prismic CMS. Check the /articles and /resume pages for the latest content updates.
