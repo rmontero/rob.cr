@@ -29,6 +29,11 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <head>
+        {/* Primary SEO */}
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+
+        {/* Favicon & Platform */}
         <link rel="preconnect" href="https://images.prismic.io" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://robcr.cdn.prismic.io" crossOrigin="anonymous" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

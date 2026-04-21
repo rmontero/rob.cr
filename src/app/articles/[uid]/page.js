@@ -28,31 +28,43 @@ export async function generateMetadata({ params }) {
     .getByUID("article", uid)
     .catch(() => notFound());
 
+  const publishDate = article.data.publishDate || article.first_publication_date;
+
   return {
+    metadataBase: new URL('https://rob.cr'),
     title: `${prismic.asText(article.data.title)} | ${prismic.asText(
       settings.data.name,
     )}`,
     description: article.data.meta_description || prismic.asText(settings.data.description),
     keywords: ["AI Engineering", "Cloud Architecture", "Rob Montero", prismic.asText(article.data.title)],
+    robots: { index: true, follow: true },
     alternates: {
-      canonical: `/articles/${uid}`,
+      canonical: `https://rob.cr/articles/${uid}`,
     },
     openGraph: {
+      type: "article",
       title: article.data.meta_title || prismic.asText(article.data.title),
       description: article.data.meta_description || prismic.asText(settings.data.description),
       url: `https://rob.cr/articles/${uid}`,
+      authors: ['Rob Montero'],
+      publishedTime: publishDate,
+      modifiedTime: article.last_publication_date || publishDate,
       images: [
         {
           url: article.data.meta_image?.url || prismic.asImageSrc(settings.data.profilePicture),
+          width: 1200,
+          height: 630,
+          alt: prismic.asText(article.data.title),
         },
       ],
-      type: "article",
     },
     twitter: {
       card: "summary_large_image",
+      site: "@robcr",
+      creator: "@robcr",
       title: article.data.meta_title || prismic.asText(article.data.title),
       description: article.data.meta_description || prismic.asText(settings.data.description),
-      images: [article.data.meta_image?.url || prismic.asImageSrc(settings.data.profilePicture)],
+      image: article.data.meta_image?.url || prismic.asImageSrc(settings.data.profilePicture),
     },
   };
 }
@@ -73,16 +85,29 @@ export default async function Page({ params }) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "TechArticle",
     headline: prismic.asText(article.data.title),
-    datePublished: article.data.publishDate || article.first_publication_date,
-    author: [
-      {
-        "@type": "Person",
-        name: "Rob Montero",
-        url: "https://rob.cr",
-      },
-    ],
+    url: `https://rob.cr/articles/${article.uid}`,
+    image: article.data.meta_image?.url || prismic.asImageSrc(settings.data.profilePicture),
+    datePublished: date.toISOString().split('T')[0],
+    dateModified: article.last_publication_date ? new Date(article.last_publication_date).toISOString().split('T')[0] : date.toISOString().split('T')[0],
+    author: {
+      "@type": "Person",
+      name: "Rob Montero",
+      url: "https://rob.cr",
+      image: "https://images.prismic.io/robcr/ZqPuBx5LeNNTxiIe_Rob_Montero_2024.png?auto=format,compress&w=500",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Rob Montero",
+      url: "https://rob.cr",
+      image: "https://images.prismic.io/robcr/ZqPuBx5LeNNTxiIe_Rob_Montero_2024.png?auto=format,compress&w=1200",
+    },
+    description: article.data.meta_description,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://rob.cr/articles/${article.uid}`,
+    },
   };
 
   return (

@@ -6,6 +6,33 @@ import { Heading } from "@/components/Heading";
 export const metadata = {
   title: "AI Agent Context | Rob.cr",
   description: "Canonical context and grounding data for AI agents and LLMs about Rob Montero.",
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: 'https://rob.cr/ai',
+  },
+  openGraph: {
+    title: "AI Agent Context | Rob Montero",
+    description: "Canonical context and grounding data for AI agents and LLMs about Rob Montero.",
+    url: 'https://rob.cr/ai',
+    type: 'website',
+    siteName: 'Rob Montero',
+    images: [
+      {
+        url: 'https://images.prismic.io/robcr/ZqPuBx5LeNNTxiIe_Rob_Montero_2024.png?auto=format,compress&w=1200&fit=max',
+        width: 1200,
+        height: 630,
+        alt: 'Rob Montero - Director of Engineering',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@robcr',
+    creator: '@robcr',
+    title: "AI Agent Context | Rob Montero",
+    description: "Canonical context and grounding data for AI agents and LLMs about Rob Montero.",
+    image: 'https://images.prismic.io/robcr/ZqPuBx5LeNNTxiIe_Rob_Montero_2024.png?auto=format,compress&w=1200&fit=max',
+  },
 };
 
 export default async function AIPage() {
