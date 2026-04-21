@@ -3,8 +3,8 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/api/',
+      disallow: ['/api/'],
     },
     sitemap: 'https://rob.cr/sitemap.xml',
-  }
+  };
 }
